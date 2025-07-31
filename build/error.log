@@ -1,0 +1,505 @@
+Consolidate compiler generated dependencies of target main
+[ 50%] Building CXX object CMakeFiles/main.dir/multikey_FHE_ver2.cpp.o
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp: In function ‘MyPoly GenerateSmallPoly(usint, const NativeInteger&)’:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:60:43: error: no matching function for call to ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >::PolyImpl(std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&, Format, std::vector<intnat::NativeIntegerT<long unsigned int> >&)’
+   60 |     MyPoly spoly(params,COEFFICIENT,coeffs);
+      |                                           ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<(! is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >), bool>) [with T = T; VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >]’
+  115 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:60:18: note:   cannot convert ‘params’ (type ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+   60 |     MyPoly spoly(params,COEFFICIENT,coeffs);
+      |                  ^~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >, bool>) [with T = T; VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >]’
+  106 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:60:18: note:   cannot convert ‘params’ (type ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+   60 |     MyPoly spoly(params,COEFFICIENT,coeffs);
+      |                  ^~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >]’
+  138 |     PolyImpl(PolyType&& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyType&) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >]’
+  133 |     PolyImpl(const PolyType& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const TugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, uint32_t) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::TugType = lbcrypto::TernaryUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>; uint32_t = unsigned int]’
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:29: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘const TugType&’ {aka ‘const lbcrypto::TernaryUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const BugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::BugType = lbcrypto::BinaryUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:29: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘const BugType&’ {aka ‘const lbcrypto::BinaryUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::DugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DugType = lbcrypto::DiscreteUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:23: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >::DugType&’ {aka ‘lbcrypto::DiscreteUniformGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const DggType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DggType = lbcrypto::DiscreteGaussianGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:29: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘const DggType&’ {aka ‘const lbcrypto::DiscreteGaussianGeneratorImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(bool, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:19: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘bool’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |              ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILDCRTParams<typename VecType::Integer> >&, Format, bool) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:60: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘const std::shared_ptr<lbcrypto::ILDCRTParams<intnat::NativeIntegerT<long unsigned int> > >&’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, bool) [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >; typename VecType::Integer = intnat::NativeIntegerT<long unsigned int>]’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:45: note:   no known conversion for argument 1 from ‘std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<intnat::NativeIntegerT<long unsigned int> > >&’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note: candidate: ‘constexpr lbcrypto::PolyImpl<VecType>::PolyImpl() [with VecType = intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >]’
+   79 |     constexpr PolyImpl() = default;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note:   candidate expects 0 arguments, 3 provided
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp: In function ‘bool InvertPoly(const Poly&, const NativeInteger&, lbcrypto::Poly&)’:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:72:24: error: ‘const Poly’ {aka ‘const class lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >’} has no member named ‘Inverse’
+   72 |         inverse = poly.Inverse();
+      |                        ^~~~~~~
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp: In function ‘void KeyGen(usint, const NativeInteger&, lbcrypto::Poly&, lbcrypto::Poly&)’:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:84:52: error: no match for ‘operator=’ (operand types are ‘lbcrypto::Poly’ {aka ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >’} and ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’})
+   84 |         f_prime = GenerateSmallPoly(degree, modulus);
+      |                                                    ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:141:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const PolyType&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  141 |     PolyType& operator=(const PolyType& rhs) noexcept override;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:141:41: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const PolyType&’ {aka ‘const lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  141 |     PolyType& operator=(const PolyType& rhs) noexcept override;
+      |                         ~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:142:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  142 |     PolyType& operator=(PolyType&& rhs) noexcept override {
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:142:36: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::PolyType&&’ {aka ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&&’}
+  142 |     PolyType& operator=(PolyType&& rhs) noexcept override {
+      |                         ~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:148:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const std::vector<int>&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  148 |     PolyType& operator=(const std::vector<int32_t>& rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:148:53: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const std::vector<int>&’
+  148 |     PolyType& operator=(const std::vector<int32_t>& rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:149:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const std::vector<long int>&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  149 |     PolyType& operator=(const std::vector<int64_t>& rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:149:53: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const std::vector<long int>&’
+  149 |     PolyType& operator=(const std::vector<int64_t>& rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:150:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(std::initializer_list<long unsigned int>) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  150 |     PolyType& operator=(std::initializer_list<uint64_t> rhs) override;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:150:57: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘std::initializer_list<long unsigned int>’
+  150 |     PolyType& operator=(std::initializer_list<uint64_t> rhs) override;
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:151:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(std::initializer_list<std::__cxx11::basic_string<char> >) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  151 |     PolyType& operator=(std::initializer_list<std::string> rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:151:60: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘std::initializer_list<std::__cxx11::basic_string<char> >’
+  151 |     PolyType& operator=(std::initializer_list<std::string> rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:152:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(uint64_t) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; uint64_t = long unsigned int]’
+  152 |     PolyType& operator=(uint64_t val);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:152:34: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘uint64_t’ {aka ‘long unsigned int’}
+  152 |     PolyType& operator=(uint64_t val);
+      |                         ~~~~~~~~~^~~
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:85:46: error: no match for ‘operator=’ (operand types are ‘lbcrypto::Poly’ {aka ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >’} and ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’})
+   85 |         g = GenerateSmallPoly(degree, modulus);
+      |                                              ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:141:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const PolyType&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  141 |     PolyType& operator=(const PolyType& rhs) noexcept override;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:141:41: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const PolyType&’ {aka ‘const lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  141 |     PolyType& operator=(const PolyType& rhs) noexcept override;
+      |                         ~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:142:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  142 |     PolyType& operator=(PolyType&& rhs) noexcept override {
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:142:36: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::PolyType&&’ {aka ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&&’}
+  142 |     PolyType& operator=(PolyType&& rhs) noexcept override {
+      |                         ~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:148:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const std::vector<int>&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  148 |     PolyType& operator=(const std::vector<int32_t>& rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:148:53: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const std::vector<int>&’
+  148 |     PolyType& operator=(const std::vector<int32_t>& rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:149:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(const std::vector<long int>&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  149 |     PolyType& operator=(const std::vector<int64_t>& rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:149:53: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘const std::vector<long int>&’
+  149 |     PolyType& operator=(const std::vector<int64_t>& rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:150:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(std::initializer_list<long unsigned int>) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  150 |     PolyType& operator=(std::initializer_list<uint64_t> rhs) override;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:150:57: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘std::initializer_list<long unsigned int>’
+  150 |     PolyType& operator=(std::initializer_list<uint64_t> rhs) override;
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:151:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(std::initializer_list<std::__cxx11::basic_string<char> >) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  151 |     PolyType& operator=(std::initializer_list<std::string> rhs);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:151:60: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘std::initializer_list<std::__cxx11::basic_string<char> >’
+  151 |     PolyType& operator=(std::initializer_list<std::string> rhs);
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:152:15: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyType& lbcrypto::PolyImpl<VecType>::operator=(uint64_t) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; uint64_t = long unsigned int]’
+  152 |     PolyType& operator=(uint64_t val);
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:152:34: note:   no known conversion for argument 1 from ‘MyPoly’ {aka ‘lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >’} to ‘uint64_t’ {aka ‘long unsigned int’}
+  152 |     PolyType& operator=(uint64_t val);
+      |                         ~~~~~~~~~^~~
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:89:41: error: ambiguous overload for ‘operator+’ (operand types are ‘bigintdyn::ubint<long unsigned int>’ and ‘NativeInteger’ {aka ‘intnat::NativeIntegerT<long unsigned int>’})
+   89 |             coeffs[i] = (2 * f_prime[i] + NativeInteger(1)) % modulus;
+      |                                         ^ ~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           NativeInteger {aka intnat::NativeIntegerT<long unsigned int>}
+In file included from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/ubintdyn.h:46,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/mubintvecdyn.h:43,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/backenddyn.h:44,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintbackend.h:38,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/math-hal.h:48,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/elemparams.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/ilparams.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:49,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/math/hal/integer.h:76:14: note: candidate: ‘bigintdyn::ubint<long unsigned int> lbcrypto::operator+(const bigintdyn::ubint<long unsigned int>&, const bigintdyn::ubint<long unsigned int>&)’
+   76 |     friend T operator+(const T& a, const T& b) {
+      |              ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/math/hal/integer.h:76:14: note: candidate: ‘intnat::NativeIntegerT<long unsigned int> lbcrypto::operator+(const intnat::NativeIntegerT<long unsigned int>&, const intnat::NativeIntegerT<long unsigned int>&)’
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:91:46: error: no matching function for call to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::PolyImpl(Format, std::vector<intnat::NativeIntegerT<long unsigned int> >&, const NativeInteger&)’
+   91 |         f = Poly(COEFFICIENT, coeffs, modulus);
+      |                                              ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<(! is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >), bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  115 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:91:18: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+   91 |         f = Poly(COEFFICIENT, coeffs, modulus);
+      |                  ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >, bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  106 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:91:18: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+   91 |         f = Poly(COEFFICIENT, coeffs, modulus);
+      |                  ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  138 |     PolyImpl(PolyType&& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyType&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  133 |     PolyImpl(const PolyType& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const TugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, uint32_t) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::TugType = lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>; uint32_t = unsigned int]’
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const TugType&’ {aka ‘const lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const BugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::BugType = lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const BugType&’ {aka ‘const lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::DugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DugType = lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:23: note:   no known conversion for argument 1 from ‘Format’ to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::DugType&’ {aka ‘lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const DggType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DggType = lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const DggType&’ {aka ‘const lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(bool, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:74: note:   no known conversion for argument 2 from ‘std::vector<intnat::NativeIntegerT<long unsigned int> >’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILDCRTParams<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:60: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILDCRTParams<bigintdyn::ubint<long unsigned int> > >&’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:45: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note: candidate: ‘constexpr lbcrypto::PolyImpl<VecType>::PolyImpl() [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+   79 |     constexpr PolyImpl() = default;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note:   candidate expects 0 arguments, 3 provided
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:100:34: error: ambiguous overload for ‘operator%’ (operand types are ‘bigintdyn::ubint<long unsigned int>’ and ‘const NativeInteger’ {aka ‘const intnat::NativeIntegerT<long unsigned int>’})
+  100 |         g2coeffs[i] = (2 * g[i]) % modulus;
+      |                       ~~~~~~~~~~ ^ ~~~~~~~
+      |                          |         |
+      |                          |         const NativeInteger {aka const intnat::NativeIntegerT<long unsigned int>}
+      |                          bigintdyn::ubint<long unsigned int>
+In file included from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/ubintdyn.h:46,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/mubintvecdyn.h:43,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintdyn/backenddyn.h:44,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/hal/bigintbackend.h:38,
+                 from /home/ono/openfhe_install/include/openfhe/core/math/math-hal.h:48,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/elemparams.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/ilparams.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:49,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/math/hal/integer.h:181:14: note: candidate: ‘bigintdyn::ubint<long unsigned int> lbcrypto::operator%(const bigintdyn::ubint<long unsigned int>&, const bigintdyn::ubint<long unsigned int>&)’
+  181 |     friend T operator%(const T& a, const T& b) {
+      |              ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/math/hal/integer.h:181:14: note: candidate: ‘intnat::NativeIntegerT<long unsigned int> lbcrypto::operator%(const intnat::NativeIntegerT<long unsigned int>&, const intnat::NativeIntegerT<long unsigned int>&)’
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:101:47: error: no matching function for call to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::PolyImpl(Format, std::vector<intnat::NativeIntegerT<long unsigned int> >&, const NativeInteger&)’
+  101 |     temp = Poly(COEFFICIENT, g2coeffs, modulus);
+      |                                               ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<(! is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >), bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  115 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:101:17: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  101 |     temp = Poly(COEFFICIENT, g2coeffs, modulus);
+      |                 ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >, bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  106 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:101:17: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  101 |     temp = Poly(COEFFICIENT, g2coeffs, modulus);
+      |                 ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  138 |     PolyImpl(PolyType&& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyType&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  133 |     PolyImpl(const PolyType& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const TugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, uint32_t) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::TugType = lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>; uint32_t = unsigned int]’
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const TugType&’ {aka ‘const lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const BugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::BugType = lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const BugType&’ {aka ‘const lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::DugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DugType = lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:23: note:   no known conversion for argument 1 from ‘Format’ to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::DugType&’ {aka ‘lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const DggType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DggType = lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const DggType&’ {aka ‘const lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(bool, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:74: note:   no known conversion for argument 2 from ‘std::vector<intnat::NativeIntegerT<long unsigned int> >’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILDCRTParams<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:60: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILDCRTParams<bigintdyn::ubint<long unsigned int> > >&’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:45: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note: candidate: ‘constexpr lbcrypto::PolyImpl<VecType>::PolyImpl() [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+   79 |     constexpr PolyImpl() = default;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note:   candidate expects 0 arguments, 3 provided
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp: In function ‘lbcrypto::Poly Encrypt(const Poly&, int, usint, const NativeInteger&)’:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:108:51: error: no matching function for call to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::PolyImpl(Format, lbcrypto::BigVector, const NativeInteger&)’
+  108 |     Poly m(COEFFICIENT, BigVector(degree), modulus);
+      |                                                   ^
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<(! is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >), bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  115 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:115:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:108:12: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  108 |     Poly m(COEFFICIENT, BigVector(degree), modulus);
+      |            ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note: candidate: ‘template<class T> lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyNative&, Format, std::enable_if_t<is_same_v<T, intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >, bool>) [with T = T; VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+  106 |     PolyImpl(const PolyNative& rhs, Format format,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:106:5: note:   template argument deduction/substitution failed:
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:108:12: note:   cannot convert ‘COEFFICIENT’ (type ‘Format’) to type ‘const PolyNative&’ {aka ‘const lbcrypto::PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> > >&’}
+  108 |     Poly m(COEFFICIENT, BigVector(degree), modulus);
+      |            ^~~~~~~~~~~
+In file included from /home/ono/openfhe_install/include/openfhe/core/lattice/hal/lat-backend.h:51,
+                 from /home/ono/openfhe_install/include/openfhe/core/lattice/lat-hal.h:35,
+                 from /home/ono/openfhe_install/include/openfhe/core/openfhecore.h:39,
+                 from /home/ono/openfhe_install/include/openfhe/pke/openfhe.h:40,
+                 from /home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:1:
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::PolyType&&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  138 |     PolyImpl(PolyType&& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:138:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const PolyType&) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::PolyType = lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >]’
+  133 |     PolyImpl(const PolyType& p) noexcept
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:133:5: note:   candidate expects 1 argument, 3 provided
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const TugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, uint32_t) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::TugType = lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>; uint32_t = unsigned int]’
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:102:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const TugType&’ {aka ‘const lbcrypto::TernaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  102 |     PolyImpl(const TugType& tug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const BugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::BugType = lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:101:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const BugType&’ {aka ‘const lbcrypto::BinaryUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  101 |     PolyImpl(const BugType& bug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(lbcrypto::PolyImpl<VecType>::DugType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DugType = lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:100:23: note:   no known conversion for argument 1 from ‘Format’ to ‘lbcrypto::PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >::DugType&’ {aka ‘lbcrypto::DiscreteUniformGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+  100 |     PolyImpl(DugType& dug, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const DggType&, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; lbcrypto::PolyImpl<VecType>::DggType = lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:99:29: note:   no known conversion for argument 1 from ‘Format’ to ‘const DggType&’ {aka ‘const lbcrypto::DiscreteGaussianGeneratorImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> > >&’}
+   99 |     PolyImpl(const DggType& dgg, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION);
+      |              ~~~~~~~~~~~~~~~^~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(bool, const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:94:74: note:   no known conversion for argument 2 from ‘lbcrypto::BigVector’ {aka ‘bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >’} to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   94 |     PolyImpl(bool initializeElementToMax, const std::shared_ptr<Params>& params, Format format = Format::EVALUATION)
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILDCRTParams<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:87:60: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILDCRTParams<bigintdyn::ubint<long unsigned int> > >&’
+   87 |     PolyImpl(const std::shared_ptr<ILDCRTParams<Integer>>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:5: note: candidate: ‘lbcrypto::PolyImpl<VecType>::PolyImpl(const std::shared_ptr<lbcrypto::ILParamsImpl<typename VecType::Integer> >&, Format, bool) [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >; typename VecType::Integer = bigintdyn::ubint<long unsigned int>]’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |     ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:81:45: note:   no known conversion for argument 1 from ‘Format’ to ‘const std::shared_ptr<lbcrypto::ILParamsImpl<bigintdyn::ubint<long unsigned int> > >&’
+   81 |     PolyImpl(const std::shared_ptr<Params>& params, Format format = Format::EVALUATION,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note: candidate: ‘constexpr lbcrypto::PolyImpl<VecType>::PolyImpl() [with VecType = bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >]’
+   79 |     constexpr PolyImpl() = default;
+      |               ^~~~~~~~
+/home/ono/openfhe_install/include/openfhe/core/lattice/hal/default/poly.h:79:15: note:   candidate expects 0 arguments, 3 provided
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:111:31: error: conversion from ‘PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >>’ to non-scalar type ‘PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >>’ requested
+  111 |     Poly s = GenerateSmallPoly(degree, modulus);
+      |              ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/home/ono/OpenFHE_code/multikey_FHE_ver2.cpp:112:31: error: conversion from ‘PolyImpl<intnat::NativeVectorT<intnat::NativeIntegerT<long unsigned int> >>’ to non-scalar type ‘PolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<long unsigned int> >>’ requested
+  112 |     Poly e = GenerateSmallPoly(degree, modulus);
+      |              ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/main.dir/build.make:76: CMakeFiles/main.dir/multikey_FHE_ver2.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/main.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
