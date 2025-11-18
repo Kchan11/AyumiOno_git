@@ -33,8 +33,11 @@ void PrintPolyContents(const Poly& poly, const std::string& message);
 
 int main(int argc, char* argv[]) {
     // パラメータを設定
-    const unsigned int degree = 8;
-    const uint64_t modulus = 320417;
+    //const unsigned int degree = 8;
+    //const uint64_t modulus = 320609;
+    const unsigned int degree = 2;
+    const uint64_t modulus = 62921;
+
 
     // 多項式環のパラメータを生成
     const unsigned int cyclotomic_order = 2 * degree;
@@ -53,13 +56,15 @@ int main(int argc, char* argv[]) {
     // 合成秘密鍵
     Poly f_combined = f_zero * f_one;
 
+    cout<<f_combined<<endl;
+
     // =================================================================
     // 2. メッセージ「0」と「1」の暗号化
     // 3つの項で演算できるか？
     // =================================================================
     int m_zero = 0;
     int m_one = 1;
-    int m_zero_2 = 1;
+    int m_zero_2 = 0;
 
     // std::cout << "\nEncrypting m_zero=" << m_zero << " and m_one=" << m_one << "..." << std::endl;
     
@@ -95,11 +100,23 @@ int main(int argc, char* argv[]) {
     // =================================================================
     // 5. 結果の検証
     // =================================================================
-    std::cout << "add: " << dec_add << endl;
-    std::cout << "mult: " << dec_mult << endl;
-    std::cout << "mix: " << dec_mix<<endl;
+    std::cout << "0+1+0 = ... " << dec_add << endl;
+    std::cout << "0*1*0 = ... " << dec_mult << endl;
+    std::cout << "(0+1)*0 = ... " << dec_mix<<endl;
+
+
+    // 期待される結果 ( 1, 0, 0 ) と一致するかどうかを判定
+    bool success = (dec_add == 1 && dec_mult == 0 && dec_mix == 0);
+
+    if (success) {
+        std::cout << "Final_Result: SUCCESS" << std::endl;
+    } else {
+        std::cout << "Final_Result: FAILURE" << std::endl;
+    }
 }
     
+
+
  
 
 // ガウス分布に従う「小さい」係数の多項式を生成
@@ -114,6 +131,10 @@ Poly GenerateSmallPoly(unsigned int degree, std::shared_ptr<ILNativeParams> para
 // 鍵生成
 bool KeyGen(unsigned int degree, std::shared_ptr<ILNativeParams> params, Poly& sk, Poly& pk) {
     Poly f_prime = GenerateSmallPoly(degree, params);
+
+   /* std::cout << "--- Debug: f_prime (raw small poly) ---" << std::endl;
+    std::cout << f_prime << std::endl; */
+
     Poly g = GenerateSmallPoly(degree, params);
     Poly f = f_prime * 2 + 1;
 
