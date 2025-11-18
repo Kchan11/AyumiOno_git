@@ -27,12 +27,12 @@ int Decrypt(const Poly& sk_combined, const Poly& c);
 Poly EvaluateAdd(const Poly& c1, const Poly& c2);
 Poly EvaluateMult(const Poly& c1, const Poly& c2);
 
-//加算器を
+
 
 int main(int argc, char* argv[]) {
     // パラメータを設定
-    const unsigned int degree = 8;
-    const uint64_t modulus = 320417;
+    const unsigned int degree = 32;
+    const uint64_t modulus = 100033;
 
     // 多項式環のパラメータを生成
     const unsigned int cyclotomic_order = 2 * degree;
@@ -53,14 +53,18 @@ int main(int argc, char* argv[]) {
 
     // =================================================================
     // 2. メッセージ「0」と「1」の暗号化
+    // 3つの項で演算できるか？
     // =================================================================
-    int m_zero = 1;
+    int m_zero = 0;
     int m_one = 1;
-    std::cout << "\nEncrypting m_zero=" << m_zero << " and m_one=" << m_one << "..." << std::endl;
+    int m_zero_2 = 1;
+
+    // std::cout << "\nEncrypting m_zero=" << m_zero << " and m_one=" << m_one << "..." << std::endl;
     
     // それぞれ異なる鍵で暗号化
     Poly c_zero = Encrypt(h_zero, m_zero, degree, params);
     Poly c_one = Encrypt(h_one, m_one, degree, params);
+    Poly c_zero_2 = Encrypt(h_zero,m_zero_2,degree,params);
 
     
 
@@ -69,46 +73,34 @@ int main(int argc, char* argv[]) {
     // =================================================================
     std::cout << "Performing homomorphic operations..." << std::endl;
     Poly c_add = EvaluateAdd(c_zero, c_one);
+    Poly c_add_result = EvaluateAdd(c_add,c_zero_2);
+    Poly c_add_result2 = EvaluateAdd(c_add_result,c_zero);
+
     Poly c_mult = EvaluateMult(c_zero, c_one);
+    Poly c_mult_result = EvaluateMult(c_mult,c_zero_2);
+
+    // (a+b) * c
+    Poly c_mix_result = EvaluateMult(c_add,c_zero_2); 
 
     // =================================================================
     // 4. 復号
     // =================================================================
     std::cout << "Decrypting results..." << std::endl;
-    int dec_add = Decrypt(f_combined, c_add);
-    int dec_mult = Decrypt(f_combined, c_mult);
+    int dec_add = Decrypt(f_combined, c_add_result);
+    int dec_add2 = Decrypt(f_combined,c_add_result2);
+    int dec_mult = Decrypt(f_combined, c_mult_result);
+    int dec_mix = Decrypt(f_combined,c_mix_result);
 
     // =================================================================
     // 5. 結果の検証
     // =================================================================
-    std::cout << "\n--- Test Results ---" << std::endl;
-    std::cout << "Plaintexts: m_zero = " << m_zero << ", m_one = " << m_one << std::endl;
-    std::cout << "------------------------" << std::endl;
-    
-    // 加算結果の検証
-    int expected_add = (m_zero + m_one) % 2;
-    cout<<dec_add<<endl;
-    std::cout << "Homomorphic Addition (0+1) Result: " << dec_add << " (Expected: " << expected_add << ")" << std::endl;
-    if (dec_add == expected_add) {
-        std::cout << "--> Addition SUCCESS" << std::endl;
-    } else {
-        std::cout << "--> Addition FAILURE" << std::endl;
-    }
-    
-    std::cout << std::endl;
-    
-    // 乗算結果の検証
-    int expected_mult = (m_zero * m_one) % 2;
-    cout<<dec_mult<<endl;
-    std::cout << "Homomorphic Multiplication (0*1) Result: " << dec_mult << " (Expected: " << expected_mult << ")" << std::endl;
-    if (dec_mult == expected_mult) {
-        std::cout << "--> Multiplication SUCCESS" << std::endl;
-    } else {
-        std::cout << "--> Multiplication FAILURE" << std::endl;
-    }
-
-    return 0;
+    std::cout << "add: " << dec_add << endl;
+    std::cout << "add2: " << dec_add2 << endl;
+    std::cout << "mult: " << dec_mult << endl;
+    std::cout << "mix: " << dec_mix<<endl;
 }
+    
+ 
 
 // ガウス分布に従う「小さい」係数の多項式を生成
 Poly GenerateSmallPoly(unsigned int degree, std::shared_ptr<ILNativeParams> params) {

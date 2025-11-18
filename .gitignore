@@ -1,0 +1,12 @@
+# Build directory
+build/
+
+# Object files
+*.o
+*.o.d
+
+# Executables
+main
+
+# Log files
+*.log
