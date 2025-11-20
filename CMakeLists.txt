@@ -56,4 +56,4 @@ endif()
 ### add_executable(EXECUTABLE-NAME SOURCES)
 ###
 ### EXAMPLE:
-add_executable(main multikey_FHE_modulus.cpp)
+add_executable(main multikey_FHE_otp.cpp)
